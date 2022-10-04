@@ -16,8 +16,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class StockServiceTest {
 
+  /*@Autowired
+  private StockService stockService;*/
   @Autowired
-  private StockService stockService;
+  private PessimisticLockStockService stockService;
   @Autowired
   private StockRepository stockRepository;
 
