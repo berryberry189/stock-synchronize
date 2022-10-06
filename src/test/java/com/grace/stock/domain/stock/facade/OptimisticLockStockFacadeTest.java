@@ -17,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class OptimisticLockStockFacadeTest {
 
   @Autowired
-  private OptimisticLockFacade optimisticLockFacade;
+  private OptimisticLockStockFacade optimisticLockStockFacade;
 
   @Autowired
   private StockRepository stockRepository;
@@ -43,7 +43,7 @@ class OptimisticLockStockFacadeTest {
     for (int i = 0; i < threadCount; i++) {
       executorService.submit(() -> {
         try {
-          optimisticLockFacade.decrease(1L, 1);
+          optimisticLockStockFacade.decrease(1L, 1);
         } catch (InterruptedException e) {
           throw new RuntimeException(e);
         } finally {
