@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 public class LettuceLockStockFacade {
 
   private final RedisLockRepository redisLockRepository;
-  private final StockService stockService;
+  private final StockService stockService
+      ;
 
   public void decrease(Long key, long quantity) throws InterruptedException {
 
